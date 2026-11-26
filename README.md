@@ -8,17 +8,17 @@ A mock-first e-commerce operations dashboard for managing products, orders, cust
 
 ## Screenshots
 
-| Dashboard | Products |
+| Login | Dashboard |
 | --- | --- |
-| <img src="./public/screenshots/dashboard1.png" alt="Commerce OS dashboard" width="420" /> | <img src="./public/screenshots/products1.png" alt="Products management page" width="420" /> |
+| <img src="./public/screenshots/login.png" alt="Commerce OS login page" width="420" /> | <img src="./public/screenshots/dashboard1.png" alt="Commerce OS dashboard" width="420" /> |
 
-| Order shipments | Product editor |
+| Products | Product editor |
 | --- | --- |
-| <img src="./public/screenshots/order-shipments.png" alt="Order shipments page" width="420" /> | <img src="./public/screenshots/product-editor1.png" alt="Product editor page" width="420" /> |
+| <img src="./public/screenshots/products1.png" alt="Products management page" width="420" /> | <img src="./public/screenshots/product-editor1.png" alt="Product editor page" width="420" /> |
 
-| Login | Permissions |
+| Order shipments | Permissions |
 | --- | --- |
-| <img src="./public/screenshots/login.png" alt="Commerce OS login page" width="420" /> | <img src="./public/screenshots/permissions1.png" alt="Permissions management page" width="420" /> |
+| <img src="./public/screenshots/order-shipments.png" alt="Order shipments page" width="420" /> | <img src="./public/screenshots/permissions1.png" alt="Permissions management page" width="420" /> |
 
 ## About
 
