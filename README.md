@@ -1,238 +1,132 @@
-<div align="center">
-  <img src="./public/logo.png" width="120" alt="E-commerce Dashboard" />
-  <h1>E-commerce Dashboard</h1>
-  <p>A React + TypeScript admin dashboard for e-commerce operations (products, orders, customers, analytics).</p>
-</div>
+# Commerce OS
 
----
+A mock-first e-commerce operations dashboard for managing products, orders, customers, content, and administration.
 
-[![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![react](https://img.shields.io/badge/react-18.3.1-61dafb.svg)](https://react.dev/)
-[![vite](https://img.shields.io/badge/vite-5.4-646cff.svg)](https://vitejs.dev/)
-[![vite](https://img.shields.io/badge/antd-5.28.0-1677FF.svg)](https://ant.design/)
+**Project owner:** Shridhar Kumar
 
-## Preview
+> **Project status:** The backend is not ready and the application is not hosted yet. The frontend currently uses mock data and API responses through Mock Service Worker (MSW). No live business data is connected.
 
-- URL: [https://e-commerce-dashboard-three-beige.vercel.app](https://e-commerce-dashboard-three-beige.vercel.app)
-- Demo credentials: `admin` / `admin`
+## Screenshots
 
-## Introduction
+| Dashboard | Products |
+| --- | --- |
+| <img src="./public/screenshots/dashboard1.png" alt="Commerce OS dashboard" width="420" /> | <img src="./public/screenshots/products1.png" alt="Products management page" width="420" /> |
 
-`e-commerce-dashboard` is a modern admin UI built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui. It combines shadcn/ui (design-system-friendly primitives) with Ant Design (enterprise-grade data components) to support complex back-office workflows.
+| Order shipments | Product editor |
+| --- | --- |
+| <img src="./public/screenshots/order-shipments.png" alt="Order shipments page" width="420" /> | <img src="./public/screenshots/product-editor1.png" alt="Product editor page" width="420" /> |
 
-## Highlights
+| Login | Permissions |
+| --- | --- |
+| <img src="./public/screenshots/login.png" alt="Commerce OS login page" width="420" /> | <img src="./public/screenshots/permissions1.png" alt="Permissions management page" width="420" /> |
 
-- React 18 + TypeScript + Vite (fast HMR, strict typing)
-- shadcn/ui + Radix primitives for accessible base components
-- Ant Design for data-heavy UI (tables, forms, drawers, upload, etc.)
-- React Query for server state (caching, refetching, mutations)
-- MSW-based mock API (toggle via build flag, URL param, or localStorage)
-- OpenAPI docs included (`docs/swagger.yaml`, `docs/swagger.json`)
+## About
 
-### Screenshots
+Commerce OS is an administrative dashboard prototype built with React and TypeScript. It provides a shared interface for common e-commerce operations, with role-aware navigation and light/dark themes.
 
-Here are some screenshots in action:
+All current API interactions are simulated by MSW. The app is intended for local UI development and demonstration; login, records, and workflows do not connect to a production backend.
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="./public/screenshots/dashboard.png">
-        <img src="./public/screenshots/dashboard.png" alt="System Dashboard" width="250"/>
-      </a>
-      <br/>
-      System Dashboard
-    </td>
-    <td align="center">
-      <a href="./public/screenshots/products.png">
-        <img src="./public/screenshots/products.png" alt="Products" width="250"/>
-      </a>
-      <br/>
-      Products
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="./public/screenshots/product-editor.png">
-        <img src="./public/screenshots/product-editor.png" alt="Product Editor" width="250"/>
-      </a>
-      <br/>
-      Product Editor
-    </td>
-    <td align="center">
-      <a href="./public/screenshots/permissions.png">
-        <img src="./public/screenshots/permissions.png" alt="Permissions" width="250"/>
-      </a>
-      <br/>
-        Permissions
-    </td>
-  </tr>
-</table>
+## Features
 
-## Features (Pages)
+- Dashboard with overview metrics, charts, and recent orders
+- Product catalog, categories, tags, and product editor
+- Orders, shipments, and shipping methods
+- Customer management
+- Coupons, posts, pages, comments, and media library
+- Payment gateway configuration screens
+- Roles, permissions, and administration pages
+- Responsive layout with light and dark themes
 
-This repo includes a set of admin pages that cover typical e-commerce back-office modules:
+## Technology
 
-- Dashboard: overview charts and KPI cards
-- Catalog: products, attributes, categories, tags, product editor
-- Orders: orders, shipments, shipping methods
-- Customers: customer list and details
-- Marketing & content: coupons, posts, post categories, pages, page categories, comments, media
-- Payments: payment gateway configuration
-- Auth & access: roles and permissions (RBAC)
-- Ops: settings, token logs
+- React 18, TypeScript, and Vite
+- Ant Design, shadcn/ui, Radix UI, and Tailwind CSS
+- React Router and TanStack React Query
+- Axios for API requests
+- Mock Service Worker (MSW) for mock API responses
+- React Hook Form and Zod for forms and validation
+- Recharts and Ant Design Plots for charts
 
-> If you’re looking for a specific module/page, start in `src/pages/admin/`.
+## Run locally
 
-## Tech Stack
+### Requirements
 
-- UI: `shadcn/ui` + `@radix-ui/*`, Tailwind CSS, Ant Design (`antd`)
-- Data: Axios, TanStack React Query (`@tanstack/react-query`)
-- Routing: React Router (`react-router-dom`)
-- Forms & validation: React Hook Form + Zod
-- Charts: Recharts (and `@ant-design/plots` for AntD charts)
-- i18n: `i18next` + `react-i18next`
-- Mocks: MSW (`msw`) + generated datasets (`pnpm generate-mocks`)
+- Node.js 18 or newer
+- pnpm
 
-## Getting Started
+### Install and start
 
-### Prerequisites
-
-- Node.js 18+
-- pnpm (recommended; `pnpm-lock.yaml` is committed)
-
-### Setup
-
-Clone the repository:
-```bash
-git clone <repository-url>
-cd e-commerce-dashboard
-```
-
-### Install
+From the project directory:
 
 ```bash
 pnpm install
 cp .env.example .env
 ```
 
-### Run (development)
+In `.env`, set `VITE_USE_MOCKS=true`. The example environment file may have mocks disabled, so make this change before starting the app.
 
 ```bash
 pnpm dev
-or
-npm run dev
 ```
 
-The dev server runs at `http://localhost:8080` (see `vite.config.ts`).
+Open the local development address shown by Vite (by default, `http://localhost:8080`). This is a local address, not a hosted website.
 
-## Configuration
+### Mock login
 
-Environment variables live in `.env` (start from `.env.example`):
+Mock authentication is for UI testing only:
 
-| Variable | Example | Notes |
+- Enter `admin` as the username to use the Admin role.
+- Enter another username to use the Editor role.
+- The mock does not validate the password.
+
+Do not use these mock flows as real authentication or for security testing.
+
+## Mock data configuration
+
+MSW provides the mock API responses and generated sample records. The app does not require a backend server to run when mocks are enabled.
+
+| Variable | Example | Purpose |
 | --- | --- | --- |
-| `VITE_API_BASE_URL` | `http://localhost:3000/api/v1/admin` | Backend admin API base URL |
-| `VITE_SWAGGER_URL` | `http://localhost:3000/swagger/doc.json` | Remote swagger JSON (optional) |
-| `VITE_USE_MOCKS` | `false` | Force-enable/disable MSW mocks |
-| `VITE_MOCK_SEED` | `1` | Deterministic mock dataset seed |
-| `VITE_MOCK_COUNT` | `20` | Mock dataset size |
-| `VITE_MOCK_AUTH` | `relaxed` | `strict` or `relaxed` |
-| `VITE_MOCK_ERROR_RATE` | `0` | `0` to `1` error probability |
-| `VITE_MOCK_NOT_FOUND` | `true` | Enable 404 simulation |
+| `VITE_USE_MOCKS` | `true` | Enable the MSW mock API |
+| `VITE_MOCK_SEED` | `1` | Set a repeatable mock-data seed |
+| `VITE_MOCK_COUNT` | `20` | Set the generated mock dataset size |
+| `VITE_MOCK_AUTH` | `relaxed` | Select `relaxed` or `strict` mock-auth mode |
+| `VITE_MOCK_ERROR_RATE` | `0` | Configure simulated request error rate |
+| `VITE_MOCK_NOT_FOUND` | `true` | Enable simulated not-found responses |
 
-## Mock API (MSW)
+The backend API and Swagger URLs in the example environment are placeholders for a future integration; no backend is currently available.
 
-Mocks can be enabled in multiple ways:
-
-- Build flag: set `VITE_USE_MOCKS=true`
-- URL param: open the app with `?mock=1`
-- Local storage: set `localStorage.USE_MOCKS = "1"`
-
-Mock settings are defined in `src/mocks/config.ts`.
-
-To (re)generate mock data from the OpenAPI spec:
-
-```bash
-pnpm generate-mocks
-```
-
-## Scripts
+## Useful commands
 
 | Command | Description |
 | --- | --- |
-| `pnpm dev` | Start dev server |
-| `pnpm build` | Production build |
-| `pnpm build:dev` | Development-mode build |
-| `pnpm preview` | Preview the build |
+| `pnpm dev` | Start the local development server |
+| `pnpm build` | Create a production build |
+| `pnpm build:dev` | Create a development-mode build |
+| `pnpm preview` | Preview a production build locally |
 | `pnpm lint` | Run ESLint |
-| `pnpm type-check` | Run TypeScript typecheck |
-| `pnpm generate-mocks` | Generate mock data (Python) |
+| `pnpm type-check` | Run the TypeScript type check |
+| `pnpm generate-mocks` | Generate mock data from the OpenAPI specification |
 
-## Project Structure
+## Project structure
 
-```
-e-commerce-dashboard/
+```text
+commerce-os/
+├── public/
+│   └── screenshots/       # README and product screenshots
 ├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── ui/              # shadcn/ui base components
-│   │   ├── common/          # Shared utility components
-│   │   ├── dashboard/       # Dashboard-specific components
-│   │   └── product-editor/  # Product management components
-│   ├── pages/               # Route-level pages
-│   ├── layouts/             # Layout components
-│   ├── providers/           # App providers (query, theme, etc.)
-│   ├── lib/                 # Utilities and API client
-│   ├── mocks/               # MSW setup + generated mock data
-│   ├── types/               # Shared TypeScript types
-│   └── main.tsx             # Entry
-├── docs/
-│   ├── swagger.yaml         # OpenAPI 3.1 spec
-│   └── swagger.json         # OpenAPI JSON
-└── scripts/                 # Utility scripts (mocks generation)
+│   ├── components/        # Shared and feature UI components
+│   ├── hooks/             # Reusable React hooks
+│   ├── layouts/           # Application layouts
+│   ├── mocks/             # MSW setup, handlers, and mock data
+│   ├── pages/             # Application pages
+│   ├── providers/         # Theme and UI providers
+│   ├── types/             # Shared TypeScript types
+│   └── main.tsx           # Application entry point
+├── docs/                  # OpenAPI specification
+└── scripts/               # Project utility scripts
 ```
-
-## Development Notes
-
-### UI Components: shadcn/ui vs Ant Design
-
-- Prefer `shadcn/ui` for small, design-system-friendly building blocks (buttons, inputs, dialogs, menus).
-- Prefer `antd` for complex enterprise widgets (tables with sorting/filtering/pagination, advanced forms, upload, drawers).
-
-### Data Fetching Pattern (React Query)
-
-- Queries live in hooks and use stable `queryKey`s for caching.
-- Mutations should invalidate affected queries for consistency.
-
-### Mock Toggle Priority
-
-`src/mocks/config.ts` enables mocks in this order:
-
-1. `VITE_USE_MOCKS` (if set)
-2. `?mock=1`
-3. `localStorage.USE_MOCKS === "1"`
-
-## Deploy Mock (Static)
-
-This repo can be deployed as a fully-static “mock” dashboard (no backend) using MSW.
-
-### Vercel (automatic)
-
-1. Import the repo in Vercel (Framework preset: Vite).
-2. Set environment variables:
-   - `VITE_USE_MOCKS=true`
-   - `VITE_BASE_PATH=/`
- 3. Deploy.
-
-## API Documentation
-
-- OpenAPI YAML: `docs/swagger.yaml`
-- OpenAPI JSON: `docs/swagger.json`
-
-## Contributing
-
-- Use `pnpm lint` and `pnpm type-check` before opening a PR.
-- Follow Conventional Commits (see `AGENTS.md`).
 
 ## License
 
-MIT — see `LICENSE`.
+No license has been specified for this project.
