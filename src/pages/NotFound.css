@@ -1,0 +1,8 @@
+html.dark .not-found-page {
+  color: #e5edf8;
+  background: #0d1626 !important;
+}
+
+html.dark .not-found-page p {
+  color: #91a1b8 !important;
+}
